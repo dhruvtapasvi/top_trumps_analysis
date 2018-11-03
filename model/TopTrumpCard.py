@@ -2,7 +2,9 @@ from typing import List, Callable, Union
 
 
 class TopTrumpCard:
+    # Unique key
     __name: str
+
     __statistic_1: int
     __statistic_2: int
     __statistic_3: int
@@ -20,12 +22,12 @@ class TopTrumpCard:
         statistic_6: int
     ):
         self.__name = name
-        self.__statistic_1 = statistic_1
-        self.__statistic_2 = statistic_2
-        self.__statistic_3 = statistic_3
-        self.__statistic_4 = statistic_4
-        self.__statistic_5 = statistic_5
-        self.__statistic_6 = statistic_6
+        self.__statistic_1 = int(statistic_1)
+        self.__statistic_2 = int(statistic_2)
+        self.__statistic_3 = int(statistic_3)
+        self.__statistic_4 = int(statistic_4)
+        self.__statistic_5 = int(statistic_5)
+        self.__statistic_6 = int(statistic_6)
 
     def name(self):
         return self.__name
@@ -47,6 +49,9 @@ class TopTrumpCard:
 
     def statistic_6(self):
         return self.__statistic_6
+
+    def __repr__(self):
+        return f"TopTrumpCard(name={self.name()})"
 
     @classmethod
     def all_getters(cls) -> List[Callable[[], Union[str, int]]]:
